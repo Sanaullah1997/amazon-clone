@@ -1,5 +1,4 @@
-// Hello, there
-import React from 'react'
+import React from 'react';
 import './header.css';
 import { Link } from 'react-router-dom';
 import SearchIcon from '@material-ui/icons/Search';
@@ -59,4 +58,4 @@ function Header() {
     )
 }
 
-export default Header
+export default Header;
