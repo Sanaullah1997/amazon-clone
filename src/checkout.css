@@ -1,5 +1,8 @@
 .checkout{
-    padding-left: 15px;
+    padding: 15px;
+    display: flex;
+    background-color: white;
+    height: max-content;
 }
 .checkout_ad{
     width: 100%;

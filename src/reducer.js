@@ -1,23 +1,18 @@
 export const initialState = {
-    basket: [{
-        id: "12341234",
-        title: "The LEarn Startup: How to create the Enterprenuership within yourself",
-        price: 12.50,
-        rating: 5.0,
-        image: "https://i.guim.co.uk/img/media/8be4095b60f796d8b4094876e5e6bb642c22bcc1/0_134_4992_2994/master/4992.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=e1a7f77bebc584ca7f4b4edd18a86de5"
-
-    }],
+    basket: [],
     user: null,
 };
 
-function reducer(state, action) {
+export const getBasketTotal = (basket) => basket?.reduce((amount, item) => item.price + amount, 0);
+
+const reducer = (state, action) => {
     console.log(action);
     switch (action.type) {
         case 'ADD_TO_BASKET':
             //Logic for adding items to basket
             return {
                 ...state,
-                basket: [...state.basket, action.item]
+                basket: [...state.basket, action.item],
             };
         case 'REMOVE_FROM_BASKET':
             //Logic for removing items from basket.
